@@ -2,13 +2,13 @@ section .text
 global ft_strlen
 
 ft_strlen:
-	xor rax, rax
+	xor rax, rax				; init rax to 0
 
-.loop:
-	cmp byte [rdi + rax], 0
-	je ft_strlen.exit
-	inc rax
-	jmp ft_strlen.loop
+loop:
+	cmp byte [rdi + rax], 0		; check if null or reach null 
+	je exit						; if instruct at top is true jump to exit
+	inc rax						; increment rax
+	jmp loop					; tell asm to restart loop
 
-.exit:
-	ret
+exit:
+	ret							; return rax
