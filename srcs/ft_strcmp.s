@@ -22,6 +22,7 @@ higher:
 less:
 	mov rax, -1
 	ret
+
 exit:
 	sub al, cl
 	ja higher
