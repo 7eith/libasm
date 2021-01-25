@@ -6,12 +6,13 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:35:49 by amonteli          #+#    #+#             */
-/*   Updated: 2021/01/25 11:17:12 by user42           ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 16:48:55 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include "libasm.h"
 
 int		main(void)
@@ -65,10 +66,23 @@ int		main(void)
 	printf(">> oboy vs oBoy\n");
 	printf("origin  : [%d]\n", strcmp("Tripouille", "Tripouill"));
     printf("mine    : [%d]\n\n", ft_strcmp("Tripouille", "Tripouill"));
+
+	char *test_write = "salu";
+
+	printf("origin : [%d]\n", write(1, "test_write", 4));
+	printf("mine   : [%d]\n", ft_write(1, "test_write", 4));
+
+	printf("\n");
+
+	printf("origin : [%d]\n", write(1, "test_write", -1));
+	printf("mine   : [%d]\n", ft_write(1, "test_write", -1));
+
+	printf("\n");
+
+	printf("origin : [%d]\n", write(1, "test_write", -1));
+	printf("mine   : [%d]\n", ft_write(1, "test_write", -1));
 	// printf("origin  : [%d]\n", strcmp("", ""));
     // printf("mine    : [%d]\n", ft_strcmp("", ""));
 
 	// printf("origin  : [%d]\n", strcmp("", ""));
-    // printf("mine    : [%d]\n", ft_strcmp("", ""));
-
-}
+    // printf("mine    : [%d]\n", ft_strcmp("",

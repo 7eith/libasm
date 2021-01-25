@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amonteli <amonteli@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/06 11:34:10 by amonteli          #+#    #+#              #
-#    Updated: 2021/01/10 14:55:17 by amonteli         ###   ########lyon.fr    #
+#    Updated: 2021/01/25 15:12:03 by user42           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC				=		nasm
 
 FLAGS 			= 		-f elf64
 
-SRCS			=		strlen.s strcpy.s strcmp.s \
+SRCS			=		strlen.s strcpy.s strcmp.s write.s \
 
 OBJS			= 		$(addprefix srcs/ft_, $(SRCS:.s=.o))
 
