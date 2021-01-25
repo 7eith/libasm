@@ -1,22 +1,22 @@
 # **************************************************************************** #
-#                                                           LE - /             #
-#                                                               /              #
-#    Makefile                                         .::    .:/ .      .::    #
-#                                                  +:+:+   +:    +:  +:+:+     #
-#    By: amonteli <amontelimart@gmail.com>          +:+   +:    +:    +:+      #
-#                                                  #+#   #+    #+    #+#       #
-#    Created: 2021/01/06 11:34:10 by amonteli     #+#   ##    ##    #+#        #
-#    Updated: 2021/01/09 13:58:18 by amonteli    ###    #+. /#+    ###.fr      #
-#                                                          /                   #
-#                                                         /                    #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: amonteli <amonteli@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/01/06 11:34:10 by amonteli          #+#    #+#              #
+#    Updated: 2021/01/10 14:55:17 by amonteli         ###   ########lyon.fr    #
+#                                                                              #
 # **************************************************************************** #
+
 NAME			=		libasm.a
 
 CC				=		nasm
 
 FLAGS 			= 		-f elf64
 
-SRCS			=		strlen.s strcpy.s \
+SRCS			=		strlen.s strcpy.s strcmp.s \
 
 OBJS			= 		$(addprefix srcs/ft_, $(SRCS:.s=.o))
 

@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   main.c                                           .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: amonteli <amontelimart@gmail.com>          +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2021/01/04 15:35:49 by amonteli     #+#   ##    ##    #+#       */
-/*   Updated: 2021/01/09 14:11:39 by amonteli    ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/04 15:35:49 by amonteli          #+#    #+#             */
+/*   Updated: 2021/01/25 11:17:12 by user42           ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 #include "libasm.h"
@@ -23,11 +23,52 @@ int		main(void)
 	char dst[5];
 	char *src = "hola";
 
-	printf("origin  : [%s]\n", strcpy(dst, src));
-    printf("mine    : [%s]\n", ft_strcpy(dst, src));
 
-	printf("origin  : [%s]\n", strcpy(dst, ""));
-    printf("mine    : [%s]\n", ft_strcpy(dst, ""));
+	printf("\t ft_strcmp\n\n");
 
-	
+	printf(">> Same NULL\n");
+	printf("origin  : [%d]\n", strcmp("", ""));
+    printf("mine    : [%d]\n\n", ft_strcmp("", ""));
+
+	printf(">> SAME\n");
+
+	printf("origin  : [%d]\n", strcmp("AHAH", "AHAH"));
+    printf("mine    : [%d]\n\n", ft_strcmp("AHAH", "AHAH"));
+
+	printf("\n");
+
+	printf(">> AHAH vs AHAh\n");
+	printf("origin  : [%d]\n", strcmp("AHAH", "AHAh"));
+    printf("mine    : [%d]\n\n", ft_strcmp("AHAH", "AHAh"));
+
+	printf("\n");
+
+	printf(">> aHAH vs AHAH\n");
+
+	printf("origin  : [%d]\n", strcmp("aHAH", "AHAH"));
+    printf("mine    : [%d]\n\n", ft_strcmp("aHAH", "AHAH"));
+
+	printf("\n");
+
+	printf(">> 0 vs 3\n");
+	printf("origin  : [%d]\n", strcmp("0", "3"));
+    printf("mine    : [%d]\n\n", ft_strcmp("0", "3"));
+
+	printf("\n");
+
+	printf(">> oboy vs oBoy\n");
+	printf("origin  : [%d]\n", strcmp("Tripouille", "TriPouille"));
+    printf("mine    : [%d]\n\n", ft_strcmp("Tripouille", "TriPouille"));
+
+	printf("\n");
+
+	printf(">> oboy vs oBoy\n");
+	printf("origin  : [%d]\n", strcmp("Tripouille", "Tripouill"));
+    printf("mine    : [%d]\n\n", ft_strcmp("Tripouille", "Tripouill"));
+	// printf("origin  : [%d]\n", strcmp("", ""));
+    // printf("mine    : [%d]\n", ft_strcmp("", ""));
+
+	// printf("origin  : [%d]\n", strcmp("", ""));
+    // printf("mine    : [%d]\n", ft_strcmp("", ""));
+
 }
