@@ -15,7 +15,7 @@ loop:
     cmp byte [rsi + rax], 0     ; check if src + count is null
     jne loop                    ; if instruct at top is false restart loop
 
-exit
+exit:
     mov byte [rdi + rax], 0     ; add null char to end of dest
     mov rax, rdi                ; mov dest to rax register to return
     pop r8                      ; uninit r8
