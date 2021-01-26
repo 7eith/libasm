@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:35:49 by amonteli          #+#    #+#             */
-/*   Updated: 2021/01/25 16:48:55 by user42           ###   ########lyon.fr   */
+/*   Updated: 2021/01/26 10:34:36 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,20 @@ int		main(void)
 	printf("origin  : [%d]\n", strcmp("Tripouille", "Tripouill"));
     printf("mine    : [%d]\n\n", ft_strcmp("Tripouille", "Tripouill"));
 
+	printf("\n\n\t ft_write\n\n");
+
 	char *test_write = "salu";
 
-	printf("origin : [%d]\n", write(1, "test_write", 4));
-	printf("mine   : [%d]\n", ft_write(1, "test_write", 4));
+	printf("origin : [%ld]\n", write(1, "test_write", 4));
+	printf("mine   : [%ld]\n", ft_write(1, "test_write", 4));
 
 	printf("\n");
 
-	printf("origin : [%d]\n", write(1, "test_write", -1));
-	printf("mine   : [%d]\n", ft_write(1, "test_write", -1));
+	printf("origin : [%ld]\n", write(1, "test_write", -1));
+	printf("mine   : [%ld]\n", ft_write(1, "test_write", -1));
 
 	printf("\n");
 
-	printf("origin : [%d]\n", write(1, "test_write", -1));
-	printf("mine   : [%d]\n", ft_write(1, "test_write", -1));
-	// printf("origin  : [%d]\n", strcmp("", ""));
-    // printf("mine    : [%d]\n", ft_strcmp("", ""));
-
-	// printf("origin  : [%d]\n", strcmp("", ""));
-    // printf("mine    : [%d]\n", ft_strcmp("",
+	printf("origin : [%ld]\n", write(-1, "test_write", -1));
+	printf("mine   : [%ld]\n", ft_write(-1, "test_write", -1));
+}
