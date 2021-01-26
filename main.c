@@ -6,13 +6,16 @@
 /*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:35:49 by amonteli          #+#    #+#             */
-/*   Updated: 2021/01/26 10:34:36 by user42           ###   ########lyon.fr   */
+/*   Updated: 2021/01/26 14:42:56 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "libasm.h"
 
 int		main(void)
@@ -71,16 +74,25 @@ int		main(void)
 
 	char *test_write = "salu";
 
-	printf("origin : [%ld]\n", write(1, "test_write", 4));
-	printf("mine   : [%ld]\n", ft_write(1, "test_write", 4));
+	// printf("origin : [%ld]\n", write(1, "test_write", 4));
+	// printf("mine   : [%ld]\n", ft_write(1, "test_write", 4));
 
-	printf("\n");
+	// printf("\n");
 
-	printf("origin : [%ld]\n", write(1, "test_write", -1));
-	printf("mine   : [%ld]\n", ft_write(1, "test_write", -1));
+	// printf("origin : [%ld]\n", write(1, "test_write", -1));
+	// printf("mine   : [%ld]\n", ft_write(1, "test_write", -1));
 
-	printf("\n");
+	// printf("\n");
 
-	printf("origin : [%ld]\n", write(-1, "test_write", -1));
-	printf("mine   : [%ld]\n", ft_write(-1, "test_write", -1));
+	// printf("origin : [%ld]\n", write(-1, "test_write", -1));
+	// printf("mine   : [%ld]\n", ft_write(-1, "test_write", -1));
+
+	int fd;
+	char *buf;
+
+	fd = open('./tests/read_me.txt', O_RDONLY);
+
+	read(fd, buf, 1);
+
+	printf("%s\n", buf);
 }
