@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/06 11:34:10 by amonteli          #+#    #+#              #
-#    Updated: 2021/01/25 15:12:03 by user42           ###   ########lyon.fr    #
+#    Updated: 2021/01/26 13:04:29 by user42           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,5 @@ fclean		:		clean
 re			:		fclean all
 
 test		:		re
-		gcc main.c libasm.a
+		clang main.c libasm.a
 		./a.out
