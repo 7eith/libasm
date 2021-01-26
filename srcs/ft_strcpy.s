@@ -2,21 +2,21 @@ section .text
 global ft_strcpy
 
 ft_strcpy:
-    push r8                     ; init r8
-    xor r8, r8                  ; init r8 to 0
-    xor rax, rax                ; init rax (counter)
+    push r8
+    xor r8, r8
+    xor rax, rax
 
 loop:
-    cmp byte [rsi + rax], 0     ; check if src + count is null
-    je exit                     ; if instruct at top is true jump to exit
-    mov r8b, [rsi + rax]        ; move src[count] to r8
-    mov [rdi + rax], r8b        ; move r8 to dst[count]
-    inc rax                     ; increment counter
-    cmp byte [rsi + rax], 0     ; check if src + count is null
-    jne loop                    ; if instruct at top is false restart loop
+    cmp byte [rsi + rax], 0
+    je exit
+    mov r8b, [rsi + rax]
+    mov [rdi + rax], r8b
+    inc rax
+    cmp byte [rsi + rax], 0
+    jne loop
 
 exit:
-    mov byte [rdi + rax], 0     ; add null char to end of dest
-    mov rax, rdi                ; mov dest to rax register to return
-    pop r8                      ; uninit r8
-    ret                         ; return rax
+    mov byte [rdi + rax], 0
+    mov rax, rdi
+    pop r8
+    ret
